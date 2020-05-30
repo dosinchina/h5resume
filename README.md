@@ -1,11 +1,13 @@
-# mypage
+# H5简历
 
-## Project setup
+## about
 ```
-npm install
+build with vue4.2
+css预处理：less
+
 ```
 
-### Compiles and hot-reloads for development
+<!-- ### Compiles and hot-reloads for development
 ```
 npm run serve
 ```
@@ -26,4 +28,4 @@ npm run lint
 ```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [Configuration Reference](https://cli.vuejs.org/config/). -->
