@@ -2,8 +2,10 @@
 
 ## about
 ```
-build with vue4.2
-css预处理：less
+vue4.2
+css预处理:less
+自动px转rem:postcss-pxtorem
+空间占用分析:vue-cli-plugin-webpack-bundle-analyzer
 
 ```
 

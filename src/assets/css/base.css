@@ -1,0 +1,101 @@
+/*格式化样式*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img{
+    /* 保证img在flex中不被拉伸 */
+    flex-shrink: 0;
+}
+fieldset, img {
+    border: 0
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal
+}
+
+ol, ul {
+    list-style: none
+}
+
+caption, th {
+    text-align: left
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+q:before, q:after {
+    content: ''
+}
+
+abbr, acronym {
+    border: 0
+}
+
+i {
+    font-style: normal
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+    color: #333333;
+    padding: 0;
+    /* margin: 0; */
+}
+
+body {
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+}
+
+input:focus {
+    border: none;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: #a3a3a3;
+    font-size: 26px;
+
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #a3a3a3;
+    font-size: 26px;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #a3a3a3;
+    font-size: 26px;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #a3a3a3;
+    font-size: 26px;
+}
