@@ -149,6 +149,7 @@ export default {
       text-align: center;
       line-height: 60px;
       flex-shrink: 0;
+      color: #333;
     }
   }
 }
