@@ -40,7 +40,9 @@ export default {
   methods: {
     //页面滚顶
     changeCurrent(index) {
-      this.current = index;
+      setTimeout(() => {
+        this.current = index;
+      }, 300);
     }
   }
 };
@@ -54,5 +56,9 @@ export default {
 .page {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 </style>

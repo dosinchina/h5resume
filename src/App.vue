@@ -14,6 +14,9 @@
   // text-align: center;
   // color: #2c3e50;
   // background-color: #FFFFCC;
+  .van-popup--center{
+    top: 50vh;
+  }
 }
 
 #nav {
