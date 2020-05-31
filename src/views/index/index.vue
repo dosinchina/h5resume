@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <van-swipe style="height: 100vh;" vertical :loop="false" :show-indicators="false" @change="changeCurrent">
+    <van-swipe style="height: 100vh;" vertical :loop="false" :show-indicators="false" @change="changeCurrent"  ref="swipe">
       <van-swipe-item>
         <div class="page" :style="'background-color: #99CCCC'">
           <transition name="van-fade">
@@ -11,7 +11,7 @@
       <van-swipe-item>
         <div class="page" :style="'background-color: #CCCCFF'">
           <transition name="van-fade">
-            
+            <skill v-show="current == 1"></skill>
           </transition>
         </div>
       </van-swipe-item>
@@ -22,6 +22,8 @@
 <script>
 // @ is an alias to /src
 import myhead from "./myhead";
+import skill from "./skill";
+
 import Vue from "vue";
 import { Button, Swipe, SwipeItem } from "vant";
 Vue.use(Swipe);
@@ -31,19 +33,45 @@ export default {
   name: "index",
   data() {
     return {
-      current: 0,
+      current: -1,
       colorList: ["#99CCCC", "#CCCCFF"]
     };
   },
-  components: { myhead: myhead },
-  mounted() {},
+  components: { myhead: myhead , skill:skill},
+  mounted() {
+    setTimeout(() => {
+      this.current = 0
+    }, 300);
+    let body = document.getElementsByTagName("body")[0]
+    // console.log(body);
+    if(body){
+      body.onmousewheel = (e) => {
+        // console.log(e);
+        if(e.deltaY > 0){
+          this.nextPage()
+        }else if(e.deltaY < 0){
+          this.prevPage()
+        }
+        
+      }
+    }
+    
+  },
   methods: {
     //页面滚顶
     changeCurrent(index) {
       setTimeout(() => {
         this.current = index;
       }, 300);
-    }
+    },
+    //下一页
+    nextPage(){
+      this.$refs.swipe.next();
+    },
+    //上一页
+    prevPage(){
+      this.$refs.swipe.prev();
+    },
   }
 };
 </script>
@@ -60,5 +88,15 @@ export default {
   align-items: center;
   justify-content: center;
   position: relative;
+}
+.page_down{
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
 }
 </style>

@@ -17,6 +17,8 @@
   .van-popup--center{
     top: 50vh;
   }
+  font-size: 32px;
+  color: #fff;
 }
 
 #nav {

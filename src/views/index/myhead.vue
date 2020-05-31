@@ -13,7 +13,15 @@
       <!-- <p>我叫杜升，前端工程师，发际线很高那种 :)</p> -->
       <p>大家好,我是从业时常两年半的前端工程师,杜升 <br> 发际线很高的那种 :)</p>
       <div class="thinline"></div>
-      <div class="msgbox"></div>
+      <div class="msgbox">
+        <p class="half">姓名：杜升</p><p class="half">经验：两年半</p>
+        <p class="half">年龄：23</p><p class="half">户籍：重庆丰都</p>
+        <p class="half">生日：1997-1-8</p><p class="half">-</p>
+        <p>院校：重庆工商职业学院(移动互联网专业)</p>
+        <p>现住址：重庆市渝北区龙华大道</p>
+        <p>联系方式：戳下面的图标都能联系到我哦↓</p>
+        <p style="clear: both;"></p>
+      </div>
       <div class="contact pub_flex_sb">
         <img :src="require('assets/images/wechat.png')" alt="" @click="()=> {wechatQrcodeShow = true}">
         <img :src="require('assets/images/qq.png')" alt="" @click="()=> {qqQrcodeShow = true}">
@@ -51,7 +59,6 @@
     <div class="wechat_popup">
       <div class="pub_flex_sb" style="width:15rem">
         <p id="textBox">582200563@qq.com</p>
-        <p class="pub_flex_sb" style="color:#00f" @click="copyText"> <van-icon name="description" />复制</p>
       </div>
     </div>
   </van-popup>
@@ -78,34 +85,6 @@ export default {
   components: {},
   mounted() {},
   methods: {
-    //复制
-    copyText() {
-      var text = document.getElementById("textBox");
-      if (window.getSelection) {
-        let selection = window.getSelection();
-        let range = document.createRange();
-        range.selectNodeContents(text);
-        selection.removeAllRanges();
-        selection.addRange(range);
-        // console.log(selection);
-      } else if (document.body.createTextRange) {
-        let range = document.body.createTextRange();
-        // console.log(range);
-        range.moveToElementText(text);
-        range.select();
-      } else {
-        this.$toast("无法复制");
-      }
-      
-        document.execCommand("copy");
-        this.$toast("复制成功");
-      // if (this.canCopy) {
-      //   document.execCommand("copy");
-      //   this.$toast("复制成功");
-      // } else {
-      //   this.$toast("还未获取，请稍等");
-      // }
-    },
     //拨打电话
     callPhone(){
       window.location.href="tel:17784242377"
@@ -140,17 +119,27 @@ export default {
   }
   .msgbox {
     width: 100%;
-    height: 300px;
+    min-height: 250px;
     border-radius: 20px;
     border: 1px solid #fff;
     margin-top: 60px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+    p{
+      text-align: left;
+      width: 100%;
+    }
+    .half{
+      width: 50%;
+      float: left;
+    }
   }
   .contact {
     width: 100%;
     padding: 40px 80px;
     box-sizing: border-box;
     img {
-      width: 80px;
+      width: 60px;
     }
   }
   .wechat_popup {

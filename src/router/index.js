@@ -7,7 +7,10 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'index',
-    component: r => require.ensure([], () => r(require('@/views/index/index')), 'index')
+    component: r => require.ensure([], () => r(require('@/views/index/index')), 'index'),
+    meta:{
+      title:'H5简历'
+    }
   }
 ]
 
@@ -17,4 +20,8 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title
+  next()
+})
 export default router
