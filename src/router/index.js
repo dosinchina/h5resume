@@ -3,13 +3,17 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-  const routes = [
+const routes = [
   {
     path: '/',
+    redirect: "/index"
+  },
+  {
+    path: '/index',
     name: 'index',
     component: r => require.ensure([], () => r(require('@/views/index/index')), 'index'),
-    meta:{
-      title:'H5简历'
+    meta: {
+      title: 'H5简历'
     }
   }
 ]

@@ -15,6 +15,13 @@
           </transition>
         </div>
       </van-swipe-item>
+      <van-swipe-item>
+        <div class="page" :style="'background-color: #99CCCC'">
+          <transition name="van-fade">
+            <project v-show="current == 2"></project>
+          </transition>
+        </div>
+      </van-swipe-item>
     </van-swipe>
   </div>
 </template>
@@ -23,6 +30,7 @@
 // @ is an alias to /src
 import myhead from "./myhead";
 import skill from "./skill";
+import project from "./project";
 
 import Vue from "vue";
 import { Button, Swipe, SwipeItem } from "vant";
@@ -37,7 +45,7 @@ export default {
       colorList: ["#99CCCC", "#CCCCFF"]
     };
   },
-  components: { myhead: myhead , skill:skill},
+  components: { myhead: myhead , skill:skill , project:project},
   mounted() {
     setTimeout(() => {
       this.current = 0

@@ -11,7 +11,7 @@
     </div>
     <div class="my_msg pub_flex_col">
       <!-- <p>我叫杜升，前端工程师，发际线很高那种 :)</p> -->
-      <p>大家好,我是从业时常两年半的前端工程师,杜升 <br> 发际线很高的那种 :)</p>
+      <p>我叫杜升，是个前端工程师<br> 发际线很高的那种 :)</p>
       <div class="thinline"></div>
       <div class="msgbox">
         <p class="half">姓名：杜升</p><p class="half">经验：两年半</p>
