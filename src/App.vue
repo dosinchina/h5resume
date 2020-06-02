@@ -19,6 +19,12 @@
   }
   font-size: 32px;
   color: #fff;
+  .van-overlay{
+    position: absolute;
+  }
+  .van-popup{
+    position: absolute;
+  }
 }
 
 #nav {
